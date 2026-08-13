@@ -1,0 +1,263 @@
+{"kind":"deck","id":"pr/nfr6nn","name":"Deck"}
+{"kind":"layout","layoutId":"be0a6eb0-7517-4dce-9fca-c4deac0ffce0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"c14076fb-d0a2-46fc-8ef4-a66167e17589","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/fywh12","slide":1,"title":"IMPLEMENTED • AWAITING APPROVAL","textShapes":5}
+{"kind":"shape","id":"sh/2x0r6lkr","slide":1,"bbox":[0,0,690,720]}
+{"kind":"shape","id":"sh/c3i9cv2t","slide":1,"bbox":[64,145,264,30]}
+{"kind":"textbox","id":"sh/d4ba50je","slide":1,"text":"IMPLEMENTED • AWAITING APPROVAL","textPreview":"IMPLEMENTED • AWAITING APPROVAL","textChars":31,"textLines":1,"bbox":[72,146,248,28]}
+{"kind":"textbox","id":"sh/q10ralkn","slide":1,"text":"AMCHAM Tanzania\nDigital Platform","textPreview":"AMCHAM Tanzania | Digital Platform","textChars":32,"textLines":2,"bbox":[64,199,520,150]}
+{"kind":"textbox","id":"sh/b2983q18","slide":1,"text":"Website proposal and implementation proof","textPreview":"Website proposal and implementation proof","textChars":41,"textLines":1,"bbox":[64,374,470,38]}
+{"kind":"textbox","id":"sh/s7y90b29","slide":1,"text":"A modern public website, member workspace and Secretariat command centre—built as one connected platform and ready to be hosted after approval.","textPreview":"A modern public website, member workspace and Secretariat command centre—built as one connected platform and ready to be hosted after app...","textChars":143,"textLines":1,"bbox":[64,432,470,106]}
+{"kind":"textbox","id":"sh/t87qtgju","slide":1,"text":"Prepared for AMCHAM Tanzania  •  July 2026","textPreview":"Prepared for AMCHAM Tanzania  •  July 2026","textChars":42,"textLines":1,"bbox":[64,633,430,24]}
+{"kind":"image","id":"im/kjq9wjqx","slide":1,"name":"","geometry":"rect","alt":"AMCHAM Tanzania homepage hero","bbox":[600,0,680,720]}
+{"kind":"image","id":"im/yh8ru98r","slide":1,"name":"","geometry":"rect","alt":"AMCHAM Tanzania logo","bbox":[64,45,190,64]}
+{"kind":"notes","id":"nt/fywh12","slide":1,"text":""}
+{"kind":"slide","id":"sl/91cfo3","slide":2,"title":"AMCHAM TANZANIA","textShapes":14}
+{"kind":"textbox","id":"sh/pcbqlc3i","slide":2,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/290rqh4r","slide":2,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/3a98j2lc","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/cz29wrmt","slide":2,"text":"THE PROPOSITION","textPreview":"THE PROPOSITION","textChars":15,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/d0bqpw3e","slide":2,"text":"Not a concept. A working implementation.","textPreview":"Not a concept. A working implementation.","textChars":40,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"shape","id":"sh/qdkruh4n","slide":2,"bbox":[59,224,520,317]}
+{"kind":"shape","id":"sh/byt8nml8","slide":2,"bbox":[64,229,510,21]}
+{"kind":"shape","id":"sh/03m90rm5","slide":2,"bbox":[75,236,7,7]}
+{"kind":"shape","id":"sh/l4vatw3q","slide":2,"bbox":[90,236,7,7]}
+{"kind":"shape","id":"sh/183excjm","slide":2,"bbox":[105,236,7,7]}
+{"kind":"shape","id":"sh/z6lcv21g","slide":2,"bbox":[615,236,550,96]}
+{"kind":"textbox","id":"sh/e5cvmxkv","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[635,254,46,35]}
+{"kind":"textbox","id":"sh/9wne1cji","slide":2,"text":"Public experience","textPreview":"Public experience","textChars":17,"textLines":1,"bbox":[685,252,460,35]}
+{"kind":"textbox","id":"sh/ovuds72x","slide":2,"text":"Responsive pages for membership, events, news, resources, galleries and company discovery.","textPreview":"Responsive pages for membership, events, news, resources, galleries and company discovery.","textChars":90,"textLines":1,"bbox":[635,299,510,18]}
+{"kind":"shape","id":"sh/nulwz21c","slide":2,"bbox":[615,346,550,96]}
+{"kind":"textbox","id":"sh/m9cvqxkr","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[635,364,46,35]}
+{"kind":"textbox","id":"sh/p0jups3e","slide":2,"text":"Member self-service","textPreview":"Member self-service","textChars":19,"textLines":1,"bbox":[685,362,460,35]}
+{"kind":"textbox","id":"sh/4zadgn2t","slide":2,"text":"A secure company workspace for profiles, submissions and documents.","textPreview":"A secure company workspace for profiles, submissions and documents.","textChars":67,"textLines":1,"bbox":[635,409,510,18]}
+{"kind":"shape","id":"sh/gvy5s7el","slide":2,"bbox":[615,456,550,96]}
+{"kind":"textbox","id":"sh/hw7mlcf6","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[635,474,46,35]}
+{"kind":"textbox","id":"sh/utw3qhwv","slide":2,"text":"Secretariat control","textPreview":"Secretariat control","textChars":19,"textLines":1,"bbox":[685,472,460,35]}
+{"kind":"textbox","id":"sh/fu54jmxg","slide":2,"text":"Publishing, approvals, uploads and member operations from one administration hub.","textPreview":"Publishing, approvals, uploads and member operations from one administration hub.","textChars":81,"textLines":1,"bbox":[635,519,510,18]}
+{"kind":"textbox","id":"sh/4zy5wrex","slide":2,"text":"Every screen shown was captured from the completed working build, currently awaiting approval and hosting.","textPreview":"Every screen shown was captured from the completed working build, currently awaiting approval and hosting.","textChars":106,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/3m9on29c","slide":2,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,250,510,286]}
+{"kind":"notes","id":"nt/91cfo3","slide":2,"text":""}
+{"kind":"slide","id":"sl/b1gpav","slide":3,"title":"AMCHAM TANZANIA","textShapes":8}
+{"kind":"textbox","id":"sh/9wzi5ov6","slide":3,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/mt8ju9cf","slide":3,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/nuh03ed0","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/wzq10juh","slide":3,"text":"PUBLIC EXPERIENCE","textPreview":"PUBLIC EXPERIENCE","textChars":17,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/x0zi9ov2","slide":3,"text":"A confident front door for trade and membership.","textPreview":"A confident front door for trade and membership.","textChars":48,"textLines":1,"bbox":[64,108,850,98]}
+{"kind":"textbox","id":"sh/ax8jy9cr","slide":3,"text":"Clear navigation turns AMCHAM’s value into visible pathways: discover, participate, join and return.","textPreview":"Clear navigation turns AMCHAM’s value into visible pathways: discover, participate, join and return.","textChars":100,"textLines":1,"bbox":[64,201,720,48]}
+{"kind":"shape","id":"sh/byh07edw","slide":3,"bbox":[59,279,565,343]}
+{"kind":"shape","id":"sh/c36hozed","slide":3,"bbox":[64,284,555,21]}
+{"kind":"shape","id":"sh/d4fix4vy","slide":3,"bbox":[75,291,7,7]}
+{"kind":"shape","id":"sh/lwfmh8ne","slide":3,"bbox":[90,291,7,7]}
+{"kind":"shape","id":"sh/kv65836t","slide":3,"bbox":[105,291,7,7]}
+{"kind":"shape","id":"sh/yton6ton","slide":3,"bbox":[663,247,516,315]}
+{"kind":"shape","id":"sh/90zmlsna","slide":3,"bbox":[668,252,506,21]}
+{"kind":"shape","id":"sh/8zq5cn6p","slide":3,"bbox":[679,259,7,7]}
+{"kind":"shape","id":"sh/7yx4ji54","slide":3,"bbox":[694,259,7,7]}
+{"kind":"shape","id":"sh/mxonadoj","slide":3,"bbox":[709,259,7,7]}
+{"kind":"shape","id":"sh/w3q5gn61","slide":3,"bbox":[86,584,112,30]}
+{"kind":"textbox","id":"sh/g7ypcbux","slide":3,"text":"HOMEPAGE","textPreview":"HOMEPAGE","textChars":8,"textLines":1,"bbox":[94,585,96,28]}
+{"kind":"shape","id":"sh/h87qlwvi","slide":3,"bbox":[692,524,90,30]}
+{"kind":"textbox","id":"sh/u5g7a1c7","slide":3,"text":"EVENTS","textPreview":"EVENTS","textChars":6,"textLines":1,"bbox":[700,525,74,28]}
+{"kind":"textbox","id":"sh/f6poj6dc","slide":3,"text":"Responsive layouts • Strong calls to action • Editorial storytelling • Clear member access","textPreview":"Responsive layouts • Strong calls to action • Editorial storytelling • Clear member access","textChars":90,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/szqhcji1","slide":3,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,305,555,312]}
+{"kind":"image","id":"im/u5oz2p0n","slide":3,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[668,273,506,284]}
+{"kind":"notes","id":"nt/b1gpav","slide":3,"text":""}
+{"kind":"slide","id":"sl/ntt5eg","slide":4,"title":"AMCHAM TANZANIA","textShapes":8}
+{"kind":"textbox","id":"sh/p8z2hsnm","slide":4,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/25o36dov","slide":4,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/36xkfi5g","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/cvqlc76d","slide":4,"text":"MEMBERSHIP GROWTH","textPreview":"MEMBERSHIP GROWTH","textChars":17,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/dwz2lcni","slide":4,"text":"Membership becomes a guided digital journey.","textPreview":"Membership becomes a guided digital journey.","textChars":44,"textLines":1,"bbox":[64,111,810,90]}
+{"kind":"textbox","id":"sh/qt83axo7","slide":4,"text":"Prospects can understand the proposition, explore the network and move directly toward application.","textPreview":"Prospects can understand the proposition, explore the network and move directly toward application.","textChars":99,"textLines":1,"bbox":[64,203,670,52]}
+{"kind":"shape","id":"sh/buhkj25s","slide":4,"bbox":[59,300,545,332]}
+{"kind":"shape","id":"sh/szml036t","slide":4,"bbox":[64,305,535,21]}
+{"kind":"shape","id":"sh/t0f2987e","slide":4,"bbox":[75,312,7,7]}
+{"kind":"shape","id":"sh/dw72hwvy","slide":4,"bbox":[90,312,7,7]}
+{"kind":"shape","id":"sh/svy1orud","slide":4,"bbox":[105,312,7,7]}
+{"kind":"shape","id":"sh/qtgjmhc7","slide":4,"bbox":[643,300,545,332]}
+{"kind":"shape","id":"sh/10r2lwvu","slide":4,"bbox":[648,305,535,21]}
+{"kind":"shape","id":"sh/0zi1srup","slide":4,"bbox":[659,312,7,7]}
+{"kind":"shape","id":"sh/fypkj6d4","slide":4,"bbox":[674,312,7,7]}
+{"kind":"shape","id":"sh/exgjq1cj","slide":4,"bbox":[689,312,7,7]}
+{"kind":"shape","id":"sh/o3i1wbul","slide":4,"bbox":[84,592,125,30]}
+{"kind":"textbox","id":"sh/8jad8j6t","slide":4,"text":"JOIN AMCHAM","textPreview":"JOIN AMCHAM","textChars":11,"textLines":1,"bbox":[92,593,109,28]}
+{"kind":"shape","id":"sh/tkjuhone","slide":4,"bbox":[670,592,150,30]}
+{"kind":"textbox","id":"sh/6hsv69o3","slide":4,"text":"MEMBER DIRECTORY","textPreview":"MEMBER DIRECTORY","textChars":16,"textLines":1,"bbox":[678,593,134,28]}
+{"kind":"textbox","id":"sh/7i1cfe5o","slide":4,"text":"A clearer value story supports recruitment while the directory demonstrates the strength of the network.","textPreview":"A clearer value story supports recruitment while the directory demonstrates the strength of the network.","textChars":104,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/cjyl4vet","slide":4,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,326,535,301]}
+{"kind":"image","id":"im/upwju1wf","slide":4,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[648,326,535,301]}
+{"kind":"notes","id":"nt/ntt5eg","slide":4,"text":""}
+{"kind":"slide","id":"sl/91tuep","slide":5,"title":"AMCHAM TANZANIA","textShapes":11}
+{"kind":"textbox","id":"sh/m90rmd0b","slide":5,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/9crah8zm","slide":5,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/8bi9oni1","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/zm98ryhk","slide":5,"text":"CONTENT AND ENGAGEMENT","textPreview":"CONTENT AND ENGAGEMENT","textChars":22,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/ylgrit0z","slide":5,"text":"Events and publications stay visible—and current.","textPreview":"Events and publications stay visible—and current.","textChars":49,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"shape","id":"sh/l8rqd8zq","slide":5,"bbox":[59,247,360,228]}
+{"kind":"shape","id":"sh/07i9k3i5","slide":5,"bbox":[64,252,350,21]}
+{"kind":"shape","id":"sh/bip8nyho","slide":5,"bbox":[75,259,7,7]}
+{"kind":"shape","id":"sh/qhgret03","slide":5,"bbox":[90,259,7,7]}
+{"kind":"shape","id":"sh/obapsr29","slide":5,"bbox":[105,259,7,7]}
+{"kind":"shape","id":"sh/2ps7q1k3","slide":5,"bbox":[460,247,360,228]}
+{"kind":"shape","id":"sh/3q1oj6lo","slide":5,"bbox":[465,252,350,21]}
+{"kind":"shape","id":"sh/gnapor2x","slide":5,"bbox":[476,259,7,7]}
+{"kind":"shape","id":"sh/1oj6hw3i","slide":5,"bbox":[491,259,7,7]}
+{"kind":"shape","id":"sh/els7mhk7","slide":5,"bbox":[506,259,7,7]}
+{"kind":"shape","id":"sh/0jep0b2h","slide":5,"bbox":[861,247,360,228]}
+{"kind":"shape","id":"sh/lknqtg32","slide":5,"bbox":[866,252,350,21]}
+{"kind":"shape","id":"sh/9ozyxwru","slide":5,"bbox":[877,259,7,7]}
+{"kind":"shape","id":"sh/8nqxorq9","slide":5,"bbox":[892,259,7,7]}
+{"kind":"shape","id":"sh/nmhgvm9o","slide":5,"bbox":[907,259,7,7]}
+{"kind":"textbox","id":"sh/l0fytcry","slide":5,"text":"NEWS & INSIGHTS","textPreview":"NEWS & INSIGHTS","textChars":15,"textLines":1,"bbox":[64,510,350,30]}
+{"kind":"textbox","id":"sh/0z6xk7qd","slide":5,"text":"Publish analysis, updates and member stories.","textPreview":"Publish analysis, updates and member stories.","textChars":45,"textLines":1,"bbox":[64,543,340,48]}
+{"kind":"textbox","id":"sh/zyxgr29s","slide":5,"text":"EVENTS","textPreview":"EVENTS","textChars":6,"textLines":1,"bbox":[465,510,350,30]}
+{"kind":"textbox","id":"sh/yxofix87","slide":5,"text":"Promote participation and manage what is live.","textPreview":"Promote participation and manage what is live.","textChars":46,"textLines":1,"bbox":[465,543,340,48]}
+{"kind":"textbox","id":"sh/dwfepcrm","slide":5,"text":"GALLERY","textPreview":"GALLERY","textChars":7,"textLines":1,"bbox":[866,510,350,30]}
+{"kind":"textbox","id":"sh/cv6xg7q1","slide":5,"text":"Turn chamber activity into visual proof.","textPreview":"Turn chamber activity into visual proof.","textChars":40,"textLines":1,"bbox":[866,543,340,48]}
+{"kind":"textbox","id":"sh/214vqtoz","slide":5,"text":"Newsletters and resources are uploaded by administrators and presented through the same trusted experience.","textPreview":"Newsletters and resources are uploaded by administrators and presented through the same trusted experience.","textChars":107,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/m5g72dwv","slide":5,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,273,350,197]}
+{"kind":"image","id":"im/wvip8ned","slide":5,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[465,273,350,197]}
+{"kind":"image","id":"im/1wvadgf2","slide":5,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[866,273,350,197]}
+{"kind":"notes","id":"nt/91tuep","slide":5,"text":""}
+{"kind":"slide","id":"sl/en1an4","slide":6,"title":"AMCHAM TANZANIA","textShapes":7}
+{"kind":"textbox","id":"sh/jutobyp0","slide":6,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/4v2p4j6l","slide":6,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/5wb6do76","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/6xk76tor","slide":6,"text":"MEMBER WORKSPACE","textPreview":"MEMBER WORKSPACE","textChars":16,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/rytofypc","slide":6,"text":"Members have a workspace of their own.","textPreview":"Members have a workspace of their own.","textChars":38,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"textbox","id":"sh/sj2p836x","slide":6,"text":"Each company can keep its presence accurate and contribute content through a controlled review process.","textPreview":"Each company can keep its presence accurate and contribute content through a controlled review process.","textChars":103,"textLines":1,"bbox":[64,199,790,46]}
+{"kind":"shape","id":"sh/tkb6h872","slide":6,"bbox":[59,289,520,318]}
+{"kind":"shape","id":"sh/el47adon","slide":6,"bbox":[64,294,510,21]}
+{"kind":"shape","id":"sh/fmdojip8","slide":6,"bbox":[75,301,7,7]}
+{"kind":"shape","id":"sh/b6pg7axs","slide":6,"bbox":[90,301,7,7]}
+{"kind":"shape","id":"sh/a5gze5g7","slide":6,"bbox":[105,301,7,7]}
+{"kind":"shape","id":"sh/w7yhgfyd","slide":6,"bbox":[618,256,561,341]}
+{"kind":"shape","id":"sh/n25g3qxg","slide":6,"bbox":[623,261,551,21]}
+{"kind":"shape","id":"sh/m1wzalgb","slide":6,"bbox":[634,268,7,7]}
+{"kind":"shape","id":"sh/947y50fm","slide":6,"bbox":[649,268,7,7]}
+{"kind":"shape","id":"sh/o3ehcvy1","slide":6,"bbox":[664,268,7,7]}
+{"kind":"shape","id":"sh/6x0zmpgf","slide":6,"bbox":[64,623,1110,35]}
+{"kind":"textbox","id":"sh/itkjet0n","slide":6,"text":"COMPANY PROFILE   •   NEWS SUBMISSIONS   •   EVENT SUBMISSIONS   •   DOCUMENTS","textPreview":"COMPANY PROFILE   •   NEWS SUBMISSIONS   •   EVENT SUBMISSIONS   •   DOCUMENTS","textChars":78,"textLines":1,"bbox":[79,626,1080,29]}
+{"kind":"textbox","id":"sh/3udk7yh8","slide":6,"text":"Member-created items remain governed: draft → submit → Secretariat review → publish.","textPreview":"Member-created items remain governed: draft → submit → Secretariat review → publish.","textChars":84,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/u5076d47","slide":6,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,315,510,287]}
+{"kind":"image","id":"im/sz2pg7m5","slide":6,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[623,282,551,310]}
+{"kind":"notes","id":"nt/en1an4","slide":6,"text":""}
+{"kind":"slide","id":"sl/epe11n","slide":7,"title":"AMCHAM TANZANIA","textShapes":8}
+{"kind":"textbox","id":"sh/axoja94z","slide":7,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/xkz2lo3q","slide":7,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/wj61cjm5","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/jmhknylw","slide":7,"text":"SECRETARIAT COMMAND CENTRE","textPreview":"SECRETARIAT COMMAND CENTRE","textChars":26,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/yl8jet4b","slide":7,"text":"One place to operate the entire platform.","textPreview":"One place to operate the entire platform.","textChars":41,"textLines":1,"bbox":[64,112,810,80]}
+{"kind":"textbox","id":"sh/loz2po3m","slide":7,"text":"The administration area brings approvals, publishing, uploads and member oversight into a single workflow.","textPreview":"The administration area brings approvals, publishing, uploads and member oversight into a single workflow.","textChars":106,"textLines":1,"bbox":[64,195,780,48]}
+{"kind":"shape","id":"sh/knqlgjm1","slide":7,"bbox":[59,295,545,332]}
+{"kind":"shape","id":"sh/7qhkryls","slide":7,"bbox":[64,300,535,21]}
+{"kind":"shape","id":"sh/6p83it47","slide":7,"bbox":[75,307,7,7]}
+{"kind":"shape","id":"sh/0rqt8rex","slide":7,"bbox":[90,307,7,7]}
+{"kind":"shape","id":"sh/1sza1cvi","slide":7,"bbox":[105,307,7,7]}
+{"kind":"shape","id":"sh/fqhszmds","slide":7,"bbox":[643,295,545,332]}
+{"kind":"shape","id":"sh/ovqtcre9","slide":7,"bbox":[648,300,535,21]}
+{"kind":"shape","id":"sh/pwza5wvu","slide":7,"bbox":[659,307,7,7]}
+{"kind":"shape","id":"sh/2t8bahw3","slide":7,"bbox":[674,307,7,7]}
+{"kind":"shape","id":"sh/nuhs3mdo","slide":7,"bbox":[689,307,7,7]}
+{"kind":"shape","id":"sh/xkja9wvq","slide":7,"bbox":[83,588,178,30]}
+{"kind":"textbox","id":"sh/lgfatwnu","slide":7,"text":"OVERVIEW & APPROVALS","textPreview":"OVERVIEW & APPROVALS","textChars":20,"textLines":1,"bbox":[91,589,162,28]}
+{"kind":"shape","id":"sh/kf6tkrm9","slide":7,"bbox":[668,588,168,30]}
+{"kind":"textbox","id":"sh/jexsr654","slide":7,"text":"CONTENT OPERATIONS","textPreview":"CONTENT OPERATIONS","textChars":18,"textLines":1,"bbox":[676,589,152,28]}
+{"kind":"textbox","id":"sh/ydoby14j","slide":7,"text":"Designed for day-to-day Secretariat ownership—without depending on a developer for routine publishing.","textPreview":"Designed for day-to-day Secretariat ownership—without depending on a developer for routine publishing.","textChars":102,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"image","id":"im/9w7m58ne","slide":7,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[64,321,535,301]}
+{"kind":"image","id":"im/b2l4ve50","slide":7,"name":"","geometry":"roundRect","alt":"Website screenshot","bbox":[648,321,535,301]}
+{"kind":"notes","id":"nt/epe11n","slide":7,"text":""}
+{"kind":"slide","id":"sl/qp66n1","slide":8,"title":"AMCHAM TANZANIA","textShapes":19}
+{"kind":"textbox","id":"sh/q587i5kj","slide":8,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/dszqd03u","slide":8,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/s7qpkv2p","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/32x87qls","slide":8,"text":"CONNECTED COMMUNICATIONS","textPreview":"CONNECTED COMMUNICATIONS","textChars":24,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/i1o7elk7","slide":8,"text":"One publishing action activates the network.","textPreview":"One publishing action activates the network.","textChars":44,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"textbox","id":"sh/54zq903y","slide":8,"text":"Approved content can move from the platform to the right audiences by email—consistently and once.","textPreview":"Approved content can move from the platform to the right audiences by email—consistently and once.","textChars":98,"textLines":1,"bbox":[64,198,800,46]}
+{"kind":"shape","id":"sh/43qpgv2d","slide":8,"bbox":[64,310,275,145]}
+{"kind":"textbox","id":"sh/vyxo36lw","slide":8,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[84,328,46,35]}
+{"kind":"textbox","id":"sh/uxo7al4b","slide":8,"text":"Publish or approve","textPreview":"Publish or approve","textChars":18,"textLines":1,"bbox":[134,326,185,35]}
+{"kind":"textbox","id":"sh/8r6d4vqt","slide":8,"text":"News, events and newsletters enter the live content stream.","textPreview":"News, events and newsletters enter the live content stream.","textChars":59,"textLines":1,"bbox":[84,373,235,67]}
+{"kind":"shape","id":"sh/9sfed07e","slide":8,"bbox":[503,310,275,145]}
+{"kind":"textbox","id":"sh/mp4v2l8n","slide":8,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[523,328,46,35]}
+{"kind":"textbox","id":"sh/nqdcbqp8","slide":8,"text":"Build the audience","textPreview":"Build the audience","textChars":18,"textLines":1,"bbox":[573,326,185,35]}
+{"kind":"textbox","id":"sh/0nmd0bqh","slide":8,"text":"Approved member-company addresses plus active subscribers are deduplicated.","textPreview":"Approved member-company addresses plus active subscribers are deduplicated.","textChars":75,"textLines":1,"bbox":[523,373,235,67]}
+{"kind":"shape","id":"sh/lovu9g72","slide":8,"bbox":[942,310,275,145]}
+{"kind":"textbox","id":"sh/y14vyl8r","slide":8,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[962,328,46,35]}
+{"kind":"textbox","id":"sh/z2dc76pw","slide":8,"text":"Deliver by email","textPreview":"Deliver by email","textChars":16,"textLines":1,"bbox":[1012,326,185,35]}
+{"kind":"textbox","id":"sh/kjqdcf61","slide":8,"text":"A single queued notification links recipients back to the website.","textPreview":"A single queued notification links recipients back to the website.","textChars":66,"textLines":1,"bbox":[962,373,235,67]}
+{"kind":"shape","id":"sh/5kzelk76","slide":8,"bbox":[354,372,125,4]}
+{"kind":"shape","id":"sh/tgvu50zq","slide":8,"bbox":[793,372,125,4]}
+{"kind":"textbox","id":"sh/sfmdwfy5","slide":8,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[397,345,40,42]}
+{"kind":"textbox","id":"sh/redc3ahk","slide":8,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[836,345,40,42]}
+{"kind":"shape","id":"sh/6d4vu5gz","slide":8,"bbox":[64,504,1153,87]}
+{"kind":"textbox","id":"sh/5cbu10ze","slide":8,"text":"EMAIL ONLY","textPreview":"EMAIL ONLY","textChars":10,"textLines":1,"bbox":[88,522,130,28]}
+{"kind":"textbox","id":"sh/4b2dsvit","slide":8,"text":"Clear preferences, safe unsubscribe handling and no SMS claims in the dashboard.","textPreview":"Clear preferences, safe unsubscribe handling and no SMS claims in the dashboard.","textChars":80,"textLines":1,"bbox":[230,516,930,42]}
+{"kind":"textbox","id":"sh/jatczqh8","slide":8,"text":"The platform keeps the website as the source of truth while email brings audiences back to it.","textPreview":"The platform keeps the website as the source of truth while email brings audiences back to it.","textChars":94,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"notes","id":"nt/qp66n1","slide":8,"text":""}
+{"kind":"slide","id":"sl/tdc0ee","slide":9,"title":"AMCHAM TANZANIA","textShapes":17}
+{"kind":"textbox","id":"sh/lszuxcn2","slide":9,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/ypobmx4b","slide":9,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/jqxcv25w","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/8fqdsrmd","slide":9,"text":"TRUST, VISIBILITY AND RESILIENCE","textPreview":"TRUST, VISIBILITY AND RESILIENCE","textChars":32,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/tgzu1w3y","slide":9,"text":"Built to be discoverable—and safe to operate.","textPreview":"Built to be discoverable—and safe to operate.","textChars":45,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"shape","id":"sh/6d8vqh4n","slide":9,"bbox":[64,276,330,154]}
+{"kind":"shape","id":"sh/7ehczmls","slide":9,"bbox":[64,276,8,154]}
+{"kind":"textbox","id":"sh/gjadwrmp","slide":9,"text":"SECURE IDENTIFIERS","textPreview":"SECURE IDENTIFIERS","textChars":18,"textLines":1,"bbox":[90,296,280,30]}
+{"kind":"textbox","id":"sh/hkju5w3a","slide":9,"text":"UUID-backed records protect internal identity; public content uses readable slugs.","textPreview":"UUID-backed records protect internal identity; public content uses readable slugs.","textChars":82,"textLines":1,"bbox":[90,333,276,77]}
+{"kind":"shape","id":"sh/pkzelsfq","slide":9,"bbox":[446,276,330,154]}
+{"kind":"shape","id":"sh/ojqdcne5","slide":9,"bbox":[446,276,8,154]}
+{"kind":"textbox","id":"sh/3ihwjixk","slide":9,"text":"SAFER SUBMISSIONS","textPreview":"SAFER SUBMISSIONS","textChars":17,"textLines":1,"bbox":[472,296,280,30]}
+{"kind":"textbox","id":"sh/2h8vadwf","slide":9,"text":"Validation, throttling and anti-spam controls protect forms and review queues.","textPreview":"Validation, throttling and anti-spam controls protect forms and review queues.","textChars":78,"textLines":1,"bbox":[472,333,276,77]}
+{"kind":"shape","id":"sh/dojepsf2","slide":9,"bbox":[828,276,330,154]}
+{"kind":"shape","id":"sh/cnadgneh","slide":9,"bbox":[828,276,8,154]}
+{"kind":"textbox","id":"sh/bmhwnixw","slide":9,"text":"CONTROLLED UPLOADS","textPreview":"CONTROLLED UPLOADS","textChars":18,"textLines":1,"bbox":[854,296,280,30]}
+{"kind":"textbox","id":"sh/ql8vedwb","slide":9,"text":"Images and documents are validated, normalized and served from the public media structure.","textPreview":"Images and documents are validated, normalized and served from the public media structure.","textChars":90,"textLines":1,"bbox":[854,333,276,77]}
+{"kind":"shape","id":"sh/tsfed8fi","slide":9,"bbox":[64,470,330,154]}
+{"kind":"shape","id":"sh/sr6d43ex","slide":9,"bbox":[64,470,8,154]}
+{"kind":"textbox","id":"sh/kvadk3mt","slide":9,"text":"ACCOUNT RECOVERY","textPreview":"ACCOUNT RECOVERY","textChars":16,"textLines":1,"bbox":[90,490,280,30]}
+{"kind":"textbox","id":"sh/5wjet8ne","slide":9,"text":"Forgot-password responses preserve privacy while serving legitimate users properly.","textPreview":"Forgot-password responses preserve privacy while serving legitimate users properly.","textChars":83,"textLines":1,"bbox":[90,527,276,77]}
+{"kind":"shape","id":"sh/itsvit43","slide":9,"bbox":[446,470,330,154]}
+{"kind":"shape","id":"sh/ju1wry58","slide":9,"bbox":[446,470,8,154]}
+{"kind":"textbox","id":"sh/szaxo3m5","slide":9,"text":"SEARCH & SHARING","textPreview":"SEARCH & SHARING","textChars":16,"textLines":1,"bbox":[472,490,280,30]}
+{"kind":"textbox","id":"sh/t03ex8nq","slide":9,"text":"Canonical metadata, page descriptions, Open Graph images, favicon, sitemap and structured data.","textPreview":"Canonical metadata, page descriptions, Open Graph images, favicon, sitemap and structured data.","textChars":95,"textLines":1,"bbox":[472,527,276,77]}
+{"kind":"shape","id":"sh/6xsvmd4z","slide":9,"bbox":[828,470,330,154]}
+{"kind":"shape","id":"sh/7y1wvi5k","slide":9,"bbox":[828,470,8,154]}
+{"kind":"textbox","id":"sh/g3uxsnm1","slide":9,"text":"PUBLISHING HYGIENE","textPreview":"PUBLISHING HYGIENE","textChars":18,"textLines":1,"bbox":[854,490,280,30]}
+{"kind":"textbox","id":"sh/h43e1snm","slide":9,"text":"Sanitized rich text, authorization checks and approval gates reduce content and access risk.","textPreview":"Sanitized rich text, authorization checks and approval gates reduce content and access risk.","textChars":92,"textLines":1,"bbox":[854,527,276,77]}
+{"kind":"textbox","id":"sh/bup876t0","slide":9,"text":"Security is treated as an operating discipline—not a one-time feature.","textPreview":"Security is treated as an operating discipline—not a one-time feature.","textChars":70,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"notes","id":"nt/tdc0ee","slide":9,"text":""}
+{"kind":"slide","id":"sl/zsenu6","slide":10,"title":"AMCHAM TANZANIA","textShapes":15}
+{"kind":"textbox","id":"sh/nelsn21k","slide":10,"text":"AMCHAM TANZANIA","textPreview":"AMCHAM TANZANIA","textChars":15,"textLines":1,"bbox":[64,28,250,25]}
+{"kind":"shape","id":"sh/8futw7i5","slide":10,"bbox":[64,56,48,4]}
+{"kind":"textbox","id":"sh/9g3apcjq","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1170,30,46,24]}
+{"kind":"textbox","id":"sh/ypsbqxk3","slide":10,"text":"COMMERCIAL INVESTMENT","textPreview":"COMMERCIAL INVESTMENT","textChars":21,"textLines":1,"bbox":[64,82,430,24]}
+{"kind":"textbox","id":"sh/za1sj21o","slide":10,"text":"A complete platform for TZS 4,000,000.","textPreview":"A complete platform for TZS 4,000,000.","textChars":38,"textLines":1,"bbox":[64,112,950,100]}
+{"kind":"textbox","id":"sh/0bats729","slide":10,"text":"The investment covers the website implementation demonstrated throughout this proposal.","textPreview":"The investment covers the website implementation demonstrated throughout this proposal.","textChars":87,"textLines":1,"bbox":[64,199,810,46]}
+{"kind":"shape","id":"sh/lcjalcje","slide":10,"bbox":[64,296,706,251]}
+{"kind":"textbox","id":"sh/ql8bmdkr","slide":10,"text":"WEBSITE DEVELOPMENT","textPreview":"WEBSITE DEVELOPMENT","textChars":19,"textLines":1,"bbox":[96,325,380,28]}
+{"kind":"textbox","id":"sh/bm1sfi1c","slide":10,"text":"TZS","textPreview":"TZS","textChars":3,"textLines":1,"bbox":[96,379,90,42]}
+{"kind":"textbox","id":"sh/bidknmpo","slide":10,"text":"4,000,000","textPreview":"4,000,000","textChars":9,"textLines":1,"bbox":[181,365,535,72]}
+{"kind":"textbox","id":"sh/ah43uho3","slide":10,"text":"One-time implementation fee","textPreview":"One-time implementation fee","textChars":27,"textLines":1,"bbox":[96,459,430,30]}
+{"kind":"shape","id":"sh/xkv2pc7u","slide":10,"bbox":[812,296,405,251]}
+{"kind":"textbox","id":"sh/wjmlwr69","slide":10,"text":"ONGOING MAINTENANCE","textPreview":"ONGOING MAINTENANCE","textChars":19,"textLines":1,"bbox":[844,325,330,28]}
+{"kind":"textbox","id":"sh/jmd4rmpk","slide":10,"text":"TZS 50,000","textPreview":"TZS 50,000","textChars":10,"textLines":1,"bbox":[844,376,330,55]}
+{"kind":"textbox","id":"sh/yl43yhoz","slide":10,"text":"per month","textPreview":"per month","textChars":9,"textLines":1,"bbox":[844,432,200,26]}
+{"kind":"textbox","id":"sh/lovmtw7q","slide":10,"text":"Continued technical maintenance after hosting.","textPreview":"Continued technical maintenance after hosting.","textChars":46,"textLines":1,"bbox":[844,479,320,42]}
+{"kind":"shape","id":"sh/knml0r65","slide":10,"bbox":[64,580,1153,55]}
+{"kind":"textbox","id":"sh/zqtkf2pg","slide":10,"text":"APPROVAL UNLOCKS HOSTING AND GO-LIVE PREPARATION","textPreview":"APPROVAL UNLOCKS HOSTING AND GO-LIVE PREPARATION","textChars":48,"textLines":1,"bbox":[84,590,1113,36]}
+{"kind":"textbox","id":"sh/ep03mxov","slide":10,"text":"Commercial proposal: TZS 4,000,000 implementation + TZS 50,000 monthly maintenance.","textPreview":"Commercial proposal: TZS 4,000,000 implementation + TZS 50,000 monthly maintenance.","textChars":83,"textLines":1,"bbox":[64,677,1090,20]}
+{"kind":"notes","id":"nt/zsenu6","slide":10,"text":""}
+{"kind":"slide","id":"sl/zy79k8","slide":11,"title":"READY FOR APPROVAL","textShapes":6}
+{"kind":"shape","id":"sh/rud0nm1c","slide":11,"bbox":[0,0,680,720]}
+{"kind":"textbox","id":"sh/1kfitwje","slide":11,"text":"READY FOR APPROVAL","textPreview":"READY FOR APPROVAL","textChars":18,"textLines":1,"bbox":[64,158,430,24]}
+{"kind":"textbox","id":"sh/0j6h0rit","slide":11,"text":"The build is ready. Approval brings it online.","textPreview":"The build is ready. Approval brings it online.","textChars":46,"textLines":1,"bbox":[64,197,550,132]}
+{"kind":"textbox","id":"sh/zix0r618","slide":11,"text":"The public experience, member workspace and Secretariat tools are complete in working form. Hosting begins once the proposal is approved.","textPreview":"The public experience, member workspace and Secretariat tools are complete in working form. Hosting begins once the proposal is approved.","textChars":137,"textLines":1,"bbox":[64,351,520,102]}
+{"kind":"shape","id":"sh/eh4zy10n","slide":11,"bbox":[64,500,520,1]}
+{"kind":"textbox","id":"sh/hobyhcja","slide":11,"text":"NEXT","textPreview":"NEXT","textChars":4,"textLines":1,"bbox":[64,521,70,26]}
+{"kind":"textbox","id":"sh/gn2ho72p","slide":11,"text":"Approval  •  Hosting configuration  •  Content sign-off  •  Go-live","textPreview":"Approval  •  Hosting configuration  •  Content sign-off  •  Go-live","textChars":67,"textLines":1,"bbox":[139,516,445,36]}
+{"kind":"textbox","id":"sh/epcfu9cn","slide":11,"text":"Developed by NextByte iCT Solutions  •  nextbyte.co.tz","textPreview":"Developed by NextByte iCT Solutions  •  nextbyte.co.tz","textChars":54,"textLines":1,"bbox":[64,645,530,24]}
+{"kind":"image","id":"im/5s7qpg72","slide":11,"name":"","geometry":"rect","alt":"AMCHAM website homepage","bbox":[702,0,578,720]}
+{"kind":"image","id":"im/3qp8n6pc","slide":11,"name":"","geometry":"rect","alt":"AMCHAM Tanzania logo","bbox":[64,45,190,64]}
+{"kind":"notes","id":"nt/zy79k8","slide":11,"text":""}

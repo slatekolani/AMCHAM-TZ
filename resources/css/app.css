@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+        background-color: #0f2148;
+        color: #ffffff;
+    }
+
+    body {
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+    }
+
+    :focus-visible {
+        outline: 2px solid #c8102e;
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    /* Editorial article body — used on news / event detail pages. */
+    .article-prose {
+        @apply text-lg leading-8 text-ink-muted;
+    }
+
+    .article-prose > * + * {
+        @apply mt-6;
+    }
+
+    .article-prose h2 {
+        @apply mt-12 font-display text-2xl font-semibold text-navy-800;
+    }
+
+    .article-prose h3 {
+        @apply mt-10 font-display text-xl font-semibold text-navy-800;
+    }
+
+    .article-prose a {
+        @apply font-semibold text-crimson underline decoration-crimson/30 underline-offset-4 transition hover:decoration-crimson;
+    }
+
+    .article-prose ul {
+        @apply list-disc space-y-2 pl-6;
+    }
+
+    .article-prose ol {
+        @apply list-decimal space-y-2 pl-6;
+    }
+
+    .article-prose blockquote {
+        @apply border-l-2 border-crimson pl-6 font-display text-xl italic text-navy-800;
+    }
+
+    .article-prose img {
+        @apply rounded-xl;
+    }
+
+    .article-prose strong {
+        @apply font-semibold text-ink;
+    }
+
+}
+
+@layer utilities {
+    /* The chamber's signature five-colour rule, used as a section accent. */
+    /**
+     * Section edge marker. Flat colour stops rather than a blended sweep: a short crimson
+     * lead, a gold tick, then deep navy for the remainder. On the navy sections the tail
+     * recedes into the background so only the accent reads, which keeps section boundaries
+     * quiet instead of banding them with colour.
+     */
+    .brand-rule {
+        background-image: linear-gradient(
+            90deg,
+            #c8102e 0 6rem,
+            #c9a227 6rem 7.5rem,
+            #0f2148 7.5rem 100%
+        );
+    }
+
+    /* Snap rails read cleaner without a visible scrollbar; the indicators convey position. */
+    .hide-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
