@@ -9,6 +9,7 @@ use App\Support\HtmlSanitizer;
 use App\Support\EventDateTime;
 use App\Support\PublicationNotifier;
 use App\Support\PublicImageUpload;
+use App\Support\UrlNormalizer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -115,6 +116,8 @@ class EventController extends Controller
 
     private function validated(Request $request): array
     {
+        $request->merge(['registration_url' => UrlNormalizer::normalize($request->input('registration_url'))]);
+
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
@@ -127,6 +130,7 @@ class EventController extends Controller
             'company_id' => ['nullable', 'exists:companies,id'],
             'status' => ['required', 'in:draft,published'],
             'audience' => ['required', 'in:public,members'],
+            'hide_from_list' => ['required', 'boolean'],
         ]);
 
         $data['description'] = HtmlSanitizer::clean($data['description'] ?? null);

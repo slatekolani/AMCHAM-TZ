@@ -49,7 +49,7 @@ export default function About({ canLogin, canRegister, page }: AboutProps) {
                                     </div>
                                     <p className="mt-6 text-xs font-semibold uppercase tracking-caps text-crimson">Our Mission</p>
                                     <h2 className="mt-3 font-display text-2xl font-semibold leading-snug text-navy-800">{mission.heading}</h2>
-                                    <p className="mt-4 leading-8 text-ink-muted">{mission.body}</p>
+                                    <div className="article-prose mt-4 text-ink-muted" dangerouslySetInnerHTML={{ __html: mission.body ?? '' }} />
                                 </article>
                             </Reveal>
                         )}
@@ -62,7 +62,7 @@ export default function About({ canLogin, canRegister, page }: AboutProps) {
                                     </div>
                                     <p className="mt-6 text-xs font-semibold uppercase tracking-caps text-navy-600">Our Vision</p>
                                     <h2 className="mt-3 font-display text-2xl font-semibold leading-snug text-navy-800">{vision.heading}</h2>
-                                    <p className="mt-4 leading-8 text-ink-muted">{vision.body}</p>
+                                    <div className="article-prose mt-4 text-ink-muted" dangerouslySetInnerHTML={{ __html: vision.body ?? '' }} />
                                 </article>
                             </Reveal>
                         )}
@@ -100,7 +100,10 @@ export default function About({ canLogin, canRegister, page }: AboutProps) {
                             <SectionHeader eyebrow="Our Story" title={history.heading} />
                         </Reveal>
                         <Reveal delay={120}>
-                            <p className="border-l-2 border-crimson pl-8 text-lg leading-9 text-ink-muted">{history.body}</p>
+                            <div
+                                className="article-prose border-l-2 border-crimson pl-8 text-lg leading-9 text-ink-muted"
+                                dangerouslySetInnerHTML={{ __html: history.body ?? '' }}
+                            />
                         </Reveal>
                     </div>
                 </section>

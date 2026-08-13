@@ -16,7 +16,7 @@ class EventsController extends Controller
         $now = now();
         $category = $request->string('category')->toString() ?: null;
         $search = $request->string('q')->toString() ?: null;
-        $base = Event::published()->publicAudience();
+        $base = Event::published()->publicAudience()->where('hide_from_list', false);
         $hasFilters = (bool) ($category || $search);
         $featured = ! $hasFilters
             ? (clone $base)->with('company')->where('starts_at', '>=', $now)->orderBy('starts_at')->first()

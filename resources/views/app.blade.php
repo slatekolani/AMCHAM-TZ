@@ -2,21 +2,21 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $heroSlides = json_decode(\App\Models\Setting::get('hero_carousel_slides', '[]'), true) ?: [];
-            $seoFallbackImage = collect($heroSlides)->pluck('main_image')->filter()->first()
-                ?? '/images/amcham-live/hero-minara.jpg';
+            // Link-share previews always show the chamber's logo, never a photo of people —
+            // consistent branding regardless of which page gets shared.
+            $seoFallbackImage = '/images/brand/amcham-logo-white-bg.png';
             $seoPages = [
                 '/' => ['AMCHAM Tanzania | American Chamber of Commerce in Tanzania', 'AMCHAM Tanzania advances trade and investment between the United States and Tanzania through advocacy, events, business insight and a trusted member network.', $seoFallbackImage],
-                '/about-us' => ['About AMCHAM Tanzania', 'Learn about the American Chamber of Commerce in Tanzania, our mission, leadership and work advancing bilateral commerce.', '/images/amcham-live/boards.jpg'],
-                '/board-members' => ['AMCHAM Tanzania Board Members', 'Meet the business leaders guiding AMCHAM Tanzania and strengthening U.S.–Tanzania commercial relationships.', '/images/amcham-live/boards.jpg'],
-                '/membership' => ['AMCHAM Tanzania Membership', 'Join AMCHAM Tanzania to access advocacy, executive networking, business intelligence and opportunities across Tanzania.', '/images/amcham-live/hero-minara.jpg'],
-                '/events' => ['AMCHAM Tanzania Events', 'Discover AMCHAM Tanzania events, policy briefings, business forums and networking opportunities in Dar es Salaam and beyond.', '/images/amcham-live/thanksgiving.png'],
-                '/news' => ['AMCHAM Tanzania News and Business Insights', 'Read AMCHAM Tanzania news, policy updates, member stories and insight on trade and investment in Tanzania.', '/images/amcham-live/tic-news.jpg'],
-                '/members' => ['AMCHAM Tanzania Members', 'Explore the companies and organizations contributing to the AMCHAM Tanzania business community.', '/images/amcham-live/hero-minara.jpg'],
-                '/resources' => ['AMCHAM Tanzania Business Resources', 'Access AMCHAM Tanzania investor guides, policy briefs and resources for doing business in Tanzania.', '/images/amcham-live/boards.jpg'],
-                '/newsletters' => ['AMCHAM Tanzania Newsletters', 'Read and download AMCHAM Tanzania newsletters featuring chamber news, events, member updates and business insight.', '/images/amcham-live/tic-news.jpg'],
-                '/gallery' => ['AMCHAM Tanzania Gallery', 'View highlights from AMCHAM Tanzania events, business forums and community activities.', '/images/amcham-live/thanksgiving.png'],
-                '/contact-us' => ['Contact AMCHAM Tanzania', 'Contact the AMCHAM Tanzania Secretariat in Dar es Salaam for membership, partnership and business enquiries.', '/images/amcham-live/hero-minara.jpg'],
+                '/about-us' => ['About AMCHAM Tanzania', 'Learn about the American Chamber of Commerce in Tanzania, our mission, leadership and work advancing bilateral commerce.', $seoFallbackImage],
+                '/board-members' => ['AMCHAM Tanzania Board Members', 'Meet the business leaders guiding AMCHAM Tanzania and strengthening U.S.–Tanzania commercial relationships.', $seoFallbackImage],
+                '/membership' => ['AMCHAM Tanzania Membership', 'Join AMCHAM Tanzania to access advocacy, executive networking, business intelligence and opportunities across Tanzania.', $seoFallbackImage],
+                '/events' => ['AMCHAM Tanzania Events', 'Discover AMCHAM Tanzania events, policy briefings, business forums and networking opportunities in Dar es Salaam and beyond.', $seoFallbackImage],
+                '/news' => ['AMCHAM Tanzania News and Business Insights', 'Read AMCHAM Tanzania news, policy updates, member stories and insight on trade and investment in Tanzania.', $seoFallbackImage],
+                '/members' => ['AMCHAM Tanzania Members', 'Explore the companies and organizations contributing to the AMCHAM Tanzania business community.', $seoFallbackImage],
+                '/resources' => ['AMCHAM Tanzania Business Resources', 'Access AMCHAM Tanzania investor guides, policy briefs and resources for doing business in Tanzania.', $seoFallbackImage],
+                '/newsletters' => ['AMCHAM Tanzania Newsletters', 'Read and download AMCHAM Tanzania newsletters featuring chamber news, events, member updates and business insight.', $seoFallbackImage],
+                '/gallery' => ['AMCHAM Tanzania Gallery', 'View highlights from AMCHAM Tanzania events, business forums and community activities.', $seoFallbackImage],
+                '/contact-us' => ['Contact AMCHAM Tanzania', 'Contact the AMCHAM Tanzania Secretariat in Dar es Salaam for membership, partnership and business enquiries.', $seoFallbackImage],
             ];
             $seoPath = '/' . ltrim(request()->path(), '/');
             $seoPath = $seoPath === '//' ? '/' : $seoPath;
@@ -28,7 +28,7 @@
                 $seo = [
                     $item['title'],
                     $item['excerpt'] ?: 'News and business insight from AMCHAM Tanzania.',
-                    $item['cover_image_path'] ?: '/images/amcham-live/tic-news.jpg',
+                    $item['cover_image_path'] ?: $seoFallbackImage,
                 ];
                 $seoType = 'article';
             } elseif (($page['component'] ?? null) === 'Public/EventShow' && ! empty($page['props']['event'])) {
@@ -37,7 +37,7 @@
                 $seo = [
                     $item['title'],
                     $eventDescription ? mb_substr($eventDescription, 0, 160) : 'Business event from AMCHAM Tanzania.',
-                    $item['cover_image_path'] ?: '/images/amcham-live/boards.jpg',
+                    $item['cover_image_path'] ?: $seoFallbackImage,
                 ];
             } elseif (str_starts_with($seoPath, '/membership/join/')) {
                 $seo = $seoPages['/membership'];
@@ -80,7 +80,7 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800|source-serif-4:400,600,700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=roboto:400,500,700,900|poppins:400,500,600,700,800&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @routes

@@ -26,6 +26,7 @@ class Event extends Model
         'registration_url',
         'company_id',
         'status',
+        'hide_from_list',
         'audience',
         'published_at',
         'reviewed_by',
@@ -39,6 +40,7 @@ class Event extends Model
         'reviewed_at' => 'datetime',
         'published_at' => 'datetime',
         'audience_notified_at' => 'datetime',
+        'hide_from_list' => 'boolean',
     ];
 
     public function getActivitylogOptions(): LogOptions

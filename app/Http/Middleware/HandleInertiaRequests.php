@@ -4,7 +4,11 @@ namespace App\Http\Middleware;
 
 use App\Models\Event;
 use App\Models\NewsArticle;
+use App\Models\OurWorkItem;
+use App\Models\PolicyUpdate;
+use App\Models\Resource;
 use App\Models\Setting;
+use App\Models\WorkingGroup;
 use App\Support\WebsiteCopy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -35,9 +39,9 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $user = $request->user();
-        $heroSlides = json_decode(Setting::get('hero_carousel_slides', '[]'), true) ?: [];
-        $seoFallbackImage = collect($heroSlides)->pluck('main_image')->filter()->first()
-            ?? '/images/amcham-live/hero-minara.jpg';
+        // Always the brand logo, never a hero/event photo — link-share previews should show
+        // the chamber's mark, not whichever photo happens to be first in the carousel.
+        $seoFallbackImage = '/images/brand/amcham-logo-white-bg.png';
 
         return [
             ...parent::share($request),
@@ -70,9 +74,27 @@ class HandleInertiaRequests extends Middleware
                     'eventsTotal' => Event::published()->upcoming()->count(),
                     'articles' => NewsArticle::published()
                         ->orderByDesc('published_at')
-                        ->take(4)
-                        ->get(['id', 'title', 'slug', 'excerpt', 'category', 'published_at', 'cover_image_path']),
+                        ->take(5)
+                        ->get(['id', 'uuid', 'title', 'slug', 'excerpt', 'category', 'published_at', 'cover_image_path']),
                     'articlesTotal' => NewsArticle::published()->count(),
+                    'newsletters' => Resource::whereRaw('LOWER(category) = ?', ['newsletter'])
+                        ->latest()
+                        ->take(5)
+                        ->get(['id', 'uuid', 'title', 'description', 'cover_image_path', 'created_at']),
+                    'newslettersTotal' => Resource::whereRaw('LOWER(category) = ?', ['newsletter'])->count(),
+                    'policyUpdates' => PolicyUpdate::published()
+                        ->orderByDesc('published_at')
+                        ->take(5)
+                        ->get(['id', 'uuid', 'title', 'slug', 'summary', 'cover_image_path', 'published_at']),
+                    'policyUpdatesTotal' => PolicyUpdate::published()->count(),
+                    'ourWorkItems' => OurWorkItem::published()
+                        ->orderBy('sort_order')
+                        ->get(['id', 'uuid', 'title', 'slug', 'summary', 'cover_image_path']),
+                    'workingGroups' => WorkingGroup::published()
+                        ->orderBy('sort_order')
+                        ->take(5)
+                        ->get(['id', 'uuid', 'title', 'slug', 'summary', 'cover_image_path']),
+                    'workingGroupsTotal' => WorkingGroup::published()->count(),
                 ],
         ];
     }

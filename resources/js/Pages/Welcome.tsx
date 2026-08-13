@@ -122,7 +122,7 @@ export default function Welcome({
             <Head title={page?.meta_title ?? 'AMCHAM Tanzania | American Chamber of Commerce in Tanzania'} />
 
             {/* ============ Bilateral hero carousel ============ */}
-            <BilateralCorridor companies={featuredCompanies} images={galleryImages?.length ? galleryImages : ctaEventImages} config={heroCarousel} copy={copy} />
+            <BilateralCorridor companies={featuredCompanies} images={galleryImages?.length ? galleryImages : ctaEventImages} config={heroCarousel} copy={copy} testimonials={testimonials} />
 
             {/* ============ Member logo strip ============ */}
             <CompanyMarquee companies={featuredCompanies} copy={copy} />

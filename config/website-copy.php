@@ -4,6 +4,7 @@ return ['groups' => [
     'images' => ['label' => 'Website images', 'fields' => [
         'site_logo_image' => '/images/brand/amcham-logo.png',
         'about_hero_image' => '/images/amcham-live/boards.jpg',
+        'our_work_hero_image' => '/images/amcham-live/boards.jpg',
         'board_hero_image' => '/images/amcham-live/boards.jpg',
         'membership_hero_image' => '/images/amcham-live/hero-minara.jpg',
         'membership_application_hero_image' => '/images/amcham-live/hero-minara.jpg',
@@ -14,6 +15,7 @@ return ['groups' => [
         'members_hero_image' => '/images/amcham-live/hero-minara.jpg',
         'resources_hero_image' => '/images/amcham-live/boards.jpg',
         'newsletters_hero_image' => '/images/amcham-live/tic-news.jpg',
+        'policy_updates_hero_image' => '/images/amcham-live/tic-news.jpg',
         'gallery_hero_image' => '/images/amcham-live/thanksgiving.png',
         'contact_hero_image' => '/images/amcham-live/hero-minara.jpg',
         'login_hero_image' => '/images/amcham-live/hero-minara.jpg',
@@ -23,7 +25,7 @@ return ['groups' => [
     ]],
     'header' => ['label' => 'Header & navigation', 'fields' => [
         'brand_name' => 'AmCham Tanzania', 'brand_descriptor' => 'American Chamber of Commerce',
-        'nav_home' => 'Home', 'nav_about' => 'About', 'nav_data' => 'Data', 'nav_membership' => 'Membership', 'nav_events' => 'Events',
+        'nav_home' => 'Home', 'nav_about' => 'About', 'nav_our_work' => 'Our Work', 'nav_data' => 'Data', 'nav_membership' => 'Membership', 'nav_events' => 'Events',
         'nav_news' => 'Newsroom', 'nav_members' => 'Members', 'nav_resources' => 'Resources', 'nav_gallery' => 'Gallery',
         'nav_contact' => 'Contact', 'nav_login' => 'Member Login', 'nav_join' => 'Join AMCHAM',
     ]],

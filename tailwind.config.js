@@ -13,8 +13,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
-                display: ['"Source Serif 4"', 'Georgia', ...defaultTheme.fontFamily.serif],
+                sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+                display: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 navy: {

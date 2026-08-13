@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\BoardMember;
 use App\Models\Company;
+use App\Support\UrlNormalizer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -75,6 +76,8 @@ class BoardMemberController extends Controller
 
     private function validated(Request $request): array
     {
+        $request->merge(['linkedin_url' => UrlNormalizer::normalize($request->input('linkedin_url'))]);
+
         return $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'role_title' => ['required', 'string', 'max:255'],

@@ -12,10 +12,13 @@ const navGroups: { label: string; items: [string, string][] }[] = [
         label: 'Content',
         items: [
             ['Pages', 'admin.pages.index'],
+            ['Our Work', 'admin.our-work.index'],
             ['Board members', 'admin.board-members.index'],
             ['Testimonials', 'admin.testimonials.index'],
             ['Trade & Investment Data', 'admin.economic-stats.index'],
             ['News', 'admin.news.index'],
+            ['Policy updates', 'admin.policy-updates.index'],
+            ['Working groups', 'admin.working-groups.index'],
             ['Events', 'admin.events.index'],
             ['Event registrations', 'admin.event-registrations.index'],
             ['Resources & newsletters', 'admin.resources.index'],

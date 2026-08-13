@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EconomicStat;
+use App\Support\UrlNormalizer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -57,6 +58,8 @@ class EconomicStatController extends Controller
 
     private function validated(Request $request): array
     {
+        $request->merge(['source_url' => UrlNormalizer::normalize($request->input('source_url'))]);
+
         return $request->validate([
             'category' => ['required', 'in:trade,investment'],
             'label' => ['required', 'string', 'max:255'],

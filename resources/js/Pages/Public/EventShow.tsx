@@ -23,6 +23,7 @@ export default function EventShow({ canLogin, canRegister, event }: EventShowPro
         notes: '',
     });
     const startDate = new Date(event.starts_at);
+    const isPast = startDate.getTime() < Date.now();
     const dateLabel = startDate.toLocaleDateString('en-US', { dateStyle: 'full', timeZone: 'Africa/Dar_es_Salaam' });
     const timeLabel = startDate.toLocaleTimeString('en-US', { timeStyle: 'short', timeZone: 'Africa/Dar_es_Salaam' });
     const publishedLabel = new Date(event.published_at ?? event.created_at).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'Africa/Dar_es_Salaam' });
@@ -41,7 +42,7 @@ export default function EventShow({ canLogin, canRegister, event }: EventShowPro
             seo={{
                 title: event.title,
                 description: renderedDescription.replace(/<[^>]*>/g, '').slice(0, 160) || `Join AMCHAM Tanzania for ${event.title}.`,
-                image: event.cover_image_path ?? '/images/amcham-live/boards.jpg',
+                image: event.cover_image_path ?? '/images/brand/amcham-logo-white-bg.png',
                 structuredData: {
                     '@type': 'Event',
                     name: event.title,
@@ -123,16 +124,23 @@ export default function EventShow({ canLogin, canRegister, event }: EventShowPro
                                         </div>
                                     </div>
                                 )}
-                                <a href="#register" className={`${btn.primary} mt-2 w-full`}>
-                                    Register for this Event
-                                    <Icon name="arrow" className="h-4 w-4" />
-                                </a>
+                                {isPast ? (
+                                    <p className="mt-2 flex w-full items-center justify-center gap-2 rounded-md border border-line bg-mist px-5 py-3.5 text-center text-sm font-semibold text-ink-faint">
+                                        This event has ended
+                                    </p>
+                                ) : (
+                                    <a href="#register" className={`${btn.primary} mt-2 w-full`}>
+                                        Register for this Event
+                                        <Icon name="arrow" className="h-4 w-4" />
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </aside>
                 </div>
             </section>
 
+            {!isPast && (
             <section id="register" className="scroll-mt-28 bg-sand-50 px-5 py-16 sm:px-8 lg:py-24">
                 <div className={`${shell} grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16`}>
                     <div>
@@ -175,6 +183,7 @@ export default function EventShow({ canLogin, canRegister, event }: EventShowPro
                     </form>
                 </div>
             </section>
+            )}
         </PublicLayout>
     );
 }

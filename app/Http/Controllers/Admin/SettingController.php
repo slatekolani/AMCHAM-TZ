@@ -7,6 +7,7 @@ use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Support\PublicImageUpload;
+use App\Support\UrlNormalizer;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -34,6 +35,8 @@ class SettingController extends Controller
 
     public function update(Request $request): RedirectResponse
     {
+        $request->merge(['social_instagram' => UrlNormalizer::normalize($request->input('social_instagram'))]);
+
         $data = $request->validate([
             'site_name' => ['nullable', 'string', 'max:255'],
             'site_tagline' => ['nullable', 'string', 'max:255'],

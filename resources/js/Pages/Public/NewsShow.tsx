@@ -23,7 +23,7 @@ export default function NewsShow({ canLogin, canRegister, article }: NewsShowPro
             seo={{
                 title: article.title,
                 description: article.excerpt ?? 'News and business insight from AMCHAM Tanzania.',
-                image: article.cover_image_path ?? '/images/amcham-live/tic-news.jpg',
+                image: article.cover_image_path ?? '/images/brand/amcham-logo-white-bg.png',
                 type: 'article',
                 structuredData: {
                     '@type': 'NewsArticle',

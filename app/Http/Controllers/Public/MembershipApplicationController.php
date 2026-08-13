@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\MembershipTier;
 use App\Rules\SafeEmail;
+use App\Support\UrlNormalizer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -47,6 +48,8 @@ class MembershipApplicationController extends Controller
                 "You already submitted a {$application->tier_name} membership application. Its current status is {$application->status}.",
             );
         }
+
+        $request->merge(['website' => UrlNormalizer::normalize($request->input('website'))]);
 
         $data = $request->validate([
             'applicant_name' => ['required', 'string', 'max:255'],

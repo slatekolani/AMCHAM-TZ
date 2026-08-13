@@ -43,19 +43,16 @@ export default function TestimonialsStrip({ testimonials, copy = {} }: { testimo
     if (testimonials.length === 0) return null;
 
     return (
-        <section className={`${sectionPad} bg-mist`}>
+        <section id="testimonials" className={`${sectionPad} bg-mist`}>
             <div className={shell}>
-                <Reveal className="mx-auto max-w-2xl text-center">
-                    <p className={`${eyebrowClass} justify-center`}>
+                <Reveal className="max-w-2xl">
+                    <p className={eyebrowClass}>
                         <span className={eyebrowDot} />
                         {copy.testimonials_eyebrow || 'In their words'}
                     </p>
                     <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-navy-800 text-balance sm:text-4xl">
-                        {copy.testimonials_heading || 'What our board member companies say.'}
+                        {copy.testimonials_heading || 'Testimonials'}
                     </h2>
-                    <p className="mt-4 text-sm text-ink-faint">
-                        {copy.testimonials_subheading || 'Shared in confidence, published anonymously.'}
-                    </p>
                 </Reveal>
 
                 <div

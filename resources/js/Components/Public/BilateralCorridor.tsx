@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
-import { Company, HeroCarouselConfig, HeroCarouselSlide } from '@/types';
+import { Company, HeroCarouselConfig, HeroCarouselSlide, Testimonial } from '@/types';
 import Icon from '@/Components/Public/Icon';
 import CountUp from '@/Components/Public/CountUp';
 import Reveal from '@/Components/Public/Reveal';
@@ -10,6 +10,7 @@ type BilateralCorridorProps = {
     companies: Company[];
     images: string[];
     config: HeroCarouselConfig;
+    testimonials: Testimonial[];
 };
 
 type SlideCopy = {
@@ -105,6 +106,14 @@ function TypingTagline({ reduced, lineOne, lineTwo }: { reduced: boolean; lineOn
     );
 }
 
+function QuoteMark() {
+    return (
+        <svg viewBox="0 0 32 24" aria-hidden="true" className="h-6 w-7 fill-gold/40">
+            <path d="M0 24V14.2C0 6.1 4.9 1.1 12.6 0l1.1 3.6C8.9 4.9 6.4 8 6.4 12h6.2V24H0Zm18 0V14.2c0-8.1 4.9-13.1 12.6-14.2l1.1 3.6c-4.8 1.3-7.3 4.4-7.3 8.4h6.2V24H18Z" />
+        </svg>
+    );
+}
+
 function Corridor({ reduced, config, label }: { reduced: boolean; config: HeroCarouselConfig; label: string }) {
     const corridorDuration = `${(Math.max(config.corridorDurationMs, 1000) * 2) / 1000}s`;
     return (
@@ -155,7 +164,7 @@ function Corridor({ reduced, config, label }: { reduced: boolean; config: HeroCa
     );
 }
 
-export default function BilateralCorridor({ companies, images, config, copy: cmsCopy = {} }: BilateralCorridorProps & { copy?: Record<string, string> }) {
+export default function BilateralCorridor({ companies, images, config, testimonials, copy: cmsCopy = {} }: BilateralCorridorProps & { copy?: Record<string, string> }) {
     const reduced = useReducedMotion();
     const fallbackImages = images.length > 0 ? images : ['/images/amcham-live/boards.jpg'];
     const fallbackSlides: HeroCarouselSlide[] = slideCopy.map((slide, slideIndex) => ({
@@ -167,10 +176,12 @@ export default function BilateralCorridor({ companies, images, config, copy: cms
     }));
     const slides = config.slides.length > 0 ? config.slides : fallbackSlides;
     const [index, setIndex] = useState(0);
+    const [testimonialIndex, setTestimonialIndex] = useState(0);
     const memberCount = companies.length;
     const sectorCount = new Set(companies.map((company) => company.sector).filter(Boolean)).size;
     const copy = slides[index % slides.length];
     const secondaryImage = copy.secondary_image || slides[(index + 1) % slides.length].main_image;
+    const activeTestimonial = testimonials.length > 0 ? testimonials[testimonialIndex % testimonials.length] : null;
 
     useEffect(() => {
         if (slides.length < 2 || reduced) return;
@@ -178,11 +189,42 @@ export default function BilateralCorridor({ companies, images, config, copy: cms
         return () => window.clearInterval(timer);
     }, [config.autoAdvanceMs, reduced, slides.length]);
 
+    /** Rotates independently of the hero slides so every testimonial is shown in sequence before looping back to the first. */
+    useEffect(() => {
+        if (testimonials.length < 2 || reduced) return;
+        const timer = window.setInterval(() => setTestimonialIndex((current) => (current + 1) % testimonials.length), config.autoAdvanceMs || AUTO_ADVANCE_MS);
+        return () => window.clearInterval(timer);
+    }, [config.autoAdvanceMs, reduced, testimonials.length]);
+
     const go = (next: number) => setIndex(((next % slides.length) + slides.length) % slides.length);
 
+    /** Eases to the full testimonials section over a fixed duration, rather than relying on each browser's native smooth-scroll speed. */
+    const scrollToTestimonials = () => {
+        const target = document.getElementById('testimonials');
+        if (!target) return;
+        if (reduced) {
+            target.scrollIntoView({ block: 'start' });
+            return;
+        }
+
+        const startY = window.scrollY;
+        const endY = startY + target.getBoundingClientRect().top;
+        const duration = 1100;
+        const startTime = performance.now();
+        const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+        const step = (now: number) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            window.scrollTo(0, startY + (endY - startY) * easeInOutCubic(progress));
+            if (progress < 1) window.requestAnimationFrame(step);
+        };
+
+        window.requestAnimationFrame(step);
+    };
+
     const facts = [
-        { value: memberCount > 0 ? `${memberCount}` : '150+', label: cmsCopy.hero_members_label || 'Member companies' },
-        { value: sectorCount > 0 ? `${sectorCount}` : '12', label: cmsCopy.hero_sectors_label || 'Sectors represented' },
+        { value: '80+', label: 'Member companies' },
+        { value: '12+', label:  'Sectors represented' },
     ];
 
     return (
@@ -373,9 +415,37 @@ export default function BilateralCorridor({ companies, images, config, copy: cms
 
                         </div>
 
-                        <div key={`secondary-${index}`} className="absolute bottom-0 left-0 w-32 overflow-hidden rounded-xl shadow-card-lg ring-4 ring-navy-950 sm:-bottom-8 sm:-left-10 sm:w-52 sm:ring-8">
-                            <img src={secondaryImage} alt="" className="aspect-square w-full object-cover" />
-                        </div>
+                        {activeTestimonial ? (
+                            <div className="absolute bottom-0 left-0 w-52 sm:-bottom-8 sm:-left-10 sm:w-72">
+                                {/* Depth stack: ghost cards peeking out behind the front card, hinting there's a full deck of testimonials. */}
+                                <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rotate-2 rounded-xl border border-white/10 bg-navy-900/40" />
+                                <div aria-hidden="true" className="absolute inset-0 translate-x-1.5 translate-y-1.5 rotate-1 rounded-xl border border-white/10 bg-navy-900/65" />
+                                <figure
+                                    key={`testimonial-${activeTestimonial.id}`}
+                                    className="relative animate-fade-up rounded-xl border border-white/15 bg-navy-900/90 p-4 shadow-card-lg backdrop-blur-md sm:p-5"
+                                >
+                                    <QuoteMark />
+                                    <blockquote className="mt-2 line-clamp-4 text-xs leading-5 text-white/80 sm:text-sm sm:leading-6">
+                                        &ldquo;{activeTestimonial.quote}&rdquo;
+                                    </blockquote>
+                                    <span aria-hidden="true" className="mt-3 block h-px w-8 bg-gold/50" />
+                                    {testimonials.length > 1 && (
+                                        <button
+                                            type="button"
+                                            onClick={scrollToTestimonials}
+                                            className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-caps text-gold transition hover:text-white"
+                                        >
+                                            See all testimonials
+                                            <Icon name="chevron-down" className="h-3 w-3" />
+                                        </button>
+                                    )}
+                                </figure>
+                            </div>
+                        ) : (
+                            <div key={`secondary-${index}`} className="absolute bottom-0 left-0 w-32 overflow-hidden rounded-xl shadow-card-lg ring-4 ring-navy-950 sm:-bottom-8 sm:-left-10 sm:w-52 sm:ring-8">
+                                <img src={secondaryImage} alt="" className="aspect-square w-full object-cover" />
+                            </div>
+                        )}
                     </div>
                 </Reveal>
             </div>

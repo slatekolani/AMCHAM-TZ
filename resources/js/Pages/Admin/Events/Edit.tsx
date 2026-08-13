@@ -30,6 +30,7 @@ export default function EventsEdit({ event }: EventsEditProps) {
         registration_url: event?.registration_url ?? '',
         status: (event?.status === 'published' ? 'published' : 'draft') as 'draft' | 'published',
         audience: (event?.audience ?? 'public') as 'public' | 'members',
+        hide_from_list: event?.hide_from_list ?? false,
     });
 
     const submit = (formEvent: FormEvent) => {
@@ -74,19 +75,24 @@ export default function EventsEdit({ event }: EventsEditProps) {
                             onChange={(formEvent) => setData('ends_at', formEvent.target.value)}
                             className="border-[#d7c8a9]"
                         />
+                        {errors.ends_at && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.ends_at}</span>}
                     </label>
                     <label className="grid gap-2 text-sm font-bold text-[#14234a]">
                         Location
                         <input value={data.location} onChange={(formEvent) => setData('location', formEvent.target.value)} className="border-[#d7c8a9]" />
+                        {errors.location && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.location}</span>}
                     </label>
                     <label className="grid gap-2 text-sm font-bold text-[#14234a]">
                         Category
                         <input value={data.category} onChange={(formEvent) => setData('category', formEvent.target.value)} className="border-[#d7c8a9]" />
+                        {errors.category && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.category}</span>}
                     </label>
                     <CoverImageUpload currentImage={event?.cover_image_path} error={errors.cover_image} onChange={(file) => setData('cover_image', file)} />
                     <label className="grid gap-2 text-sm font-bold text-[#14234a]">
                         Registration URL
                         <input value={data.registration_url} onChange={(formEvent) => setData('registration_url', formEvent.target.value)} className="border-[#d7c8a9]" />
+                        <span className="text-xs font-medium text-slate-500">You can leave off “https://” — it will be added automatically.</span>
+                        {errors.registration_url && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.registration_url}</span>}
                     </label>
                 </div>
 
@@ -94,6 +100,7 @@ export default function EventsEdit({ event }: EventsEditProps) {
                     Description
                     <RichTextEditor value={data.description} onChange={(html) => setData('description', html)} />
                     <span className="text-xs font-medium text-slate-500">Use {'{{event_date}}'} where the scheduled event date should appear. It updates automatically from “Starts at”.</span>
+                    {errors.description && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.description}</span>}
                 </label>
 
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -103,6 +110,7 @@ export default function EventsEdit({ event }: EventsEditProps) {
                             <option value="draft">Draft</option>
                             <option value="published">Published</option>
                         </select>
+                        {errors.status && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.status}</span>}
                     </label>
 
                     <label className="grid gap-2 text-sm font-bold text-[#14234a]">
@@ -114,6 +122,17 @@ export default function EventsEdit({ event }: EventsEditProps) {
                         {errors.audience && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.audience}</span>}
                     </label>
                 </div>
+
+                <label className="flex items-center gap-2 text-sm font-bold text-[#14234a]">
+                    <input
+                        type="checkbox"
+                        checked={data.hide_from_list}
+                        onChange={(formEvent) => setData('hide_from_list', formEvent.target.checked)}
+                        className="border-[#d7c8a9]"
+                    />
+                    Hide from the public events list (keeps the event and its registrations, just removes it from /events)
+                    {errors.hide_from_list && <span className="text-xs font-semibold text-[#cf2f3b]">{errors.hide_from_list}</span>}
+                </label>
 
                 <button
                     type="submit"

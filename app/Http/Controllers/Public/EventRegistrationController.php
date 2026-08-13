@@ -18,6 +18,10 @@ class EventRegistrationController extends Controller
     {
         abort_unless($event->status === 'published' && $event->isVisibleTo($request->user()), 404);
 
+        if ($event->starts_at->isPast()) {
+            return back()->with('error', 'Registration for this event has closed.');
+        }
+
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => [

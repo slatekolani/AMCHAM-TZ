@@ -164,6 +164,51 @@ export interface Testimonial {
     is_active?: boolean;
 }
 
+export interface PolicyUpdate {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
+    body: string | null;
+    cover_image_path: string | null;
+    is_active: boolean;
+    published_at: string | null;
+}
+
+export interface OurWorkItem {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
+    body: string | null;
+    cover_image_path: string | null;
+    is_active: boolean;
+    sort_order: number;
+}
+
+export interface WorkingGroup {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
+    body: string | null;
+    cover_image_path: string | null;
+    is_active: boolean;
+    sort_order: number;
+}
+
+export interface NavWorkingGroupItem {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
+    cover_image_path: string | null;
+}
+
 export type ContentStatus = 'draft' | 'pending_review' | 'approved' | 'rejected' | 'published';
 
 export interface NewsArticle {
@@ -214,6 +259,7 @@ export interface Event {
     company?: Company | null;
     status: ContentStatus;
     audience: 'public' | 'members';
+    hide_from_list: boolean;
     published_at: string | null;
     reviewed_by: number | null;
     reviewed_at: string | null;
@@ -325,11 +371,40 @@ export interface NavFeaturedEvent {
 
 export interface NavLatestArticle {
     id: number;
+    uuid: string;
     title: string;
     slug: string;
     excerpt: string | null;
     category: string | null;
     published_at: string | null;
+    cover_image_path: string | null;
+}
+
+export interface NavNewsletterItem {
+    id: number;
+    uuid: string;
+    title: string;
+    description: string | null;
+    cover_image_path: string | null;
+    created_at: string;
+}
+
+export interface NavPolicyUpdateItem {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
+    cover_image_path: string | null;
+    published_at: string | null;
+}
+
+export interface NavOurWorkItem {
+    id: number;
+    uuid: string;
+    title: string;
+    slug: string;
+    summary: string | null;
     cover_image_path: string | null;
 }
 
@@ -366,5 +441,12 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
         eventsTotal: number;
         articles: NavLatestArticle[];
         articlesTotal: number;
+        newsletters: NavNewsletterItem[];
+        newslettersTotal: number;
+        policyUpdates: NavPolicyUpdateItem[];
+        policyUpdatesTotal: number;
+        ourWorkItems: NavOurWorkItem[];
+        workingGroups: NavWorkingGroupItem[];
+        workingGroupsTotal: number;
     };
 };

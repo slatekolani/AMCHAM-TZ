@@ -2,6 +2,7 @@ import { Link, usePage } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
 import { PageProps } from '@/types';
 import Icon from '@/Components/Public/Icon';
+import { NewsroomDesktopPanel, NewsroomMobileAccordion } from '@/Components/Public/NewsroomMegaMenu';
 
 /* ------------------------------------------------------------------ */
 /* Model                                                               */
@@ -20,6 +21,9 @@ export type NavLink = {
     desc: string;
     href: string;
     preview: NavPreview;
+    /** Optional small uppercase heading rendered above this link in the dropdown — groups
+     *  related links (e.g. "Publications") without introducing a nested flyout menu. */
+    section?: string;
 };
 
 export type NavFooterLink = {
@@ -31,8 +35,9 @@ export type NavGroup = {
     key: string;
     label: string;
     links: NavLink[];
-    /** Shown in the preview pane when no link is hovered. Events/News groups feed this from the backend. */
-    feature: NavPreview;
+    /** Shown in the preview pane when no link is hovered. Events/News groups feed this from the backend.
+     *  Omitted for the bespoke Newsroom panel, which renders its own preview list instead. */
+    feature?: NavPreview;
     /** "View all …" style links shown in a bar below the panel. */
     footer?: NavFooterLink[];
     matches: string[];
@@ -46,17 +51,10 @@ function formatEventDate(value: string): string {
     return new Date(value).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
-function formatArticleDate(value: string | null): string {
-    if (!value) return '';
-    return new Date(value).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-}
-
 export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string> = {}): NavGroup[] {
     const t = (key: string, fallback: string) => cms[key]?.trim() || fallback;
     const events = nav?.events ?? [];
-    const articles = nav?.articles ?? [];
     const eventsTotal = nav?.eventsTotal ?? events.length;
-    const articlesTotal = nav?.articlesTotal ?? articles.length;
 
     const aboutPreview: NavPreview = {
         image: t('about_hero_image', '/images/amcham-live/boards.jpg'),
@@ -103,13 +101,6 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
         href: '/events',
     };
 
-    const articlesFallbackPreview: NavPreview = {
-        image: t('news_hero_image', '/images/amcham-live/tic-news.jpg'),
-        eyebrow: 'Publications',
-        title: 'News and insight from the chamber',
-        href: '/news',
-    };
-
     // Live events from the backend become the dropdown list; the rest are reached via "View all".
     const eventLinks: NavLink[] = events.length
         ? events.slice(0, NAV_MAX_ITEMS).map((event) => {
@@ -148,34 +139,39 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
               },
           ];
 
-    const articleLinks: NavLink[] = articles.length
-        ? articles.slice(0, NAV_MAX_ITEMS).map((article) => {
-              const meta = formatArticleDate(article.published_at);
-              const href = route('news.show', article.slug);
+    const eventsShown = Math.min(events.length, NAV_MAX_ITEMS);
+
+    const ourWorkItems = nav?.ourWorkItems ?? [];
+    const ourWorkFallbackPreview: NavPreview = {
+        image: t('our_work_hero_image', '/images/amcham-live/boards.jpg'),
+        eyebrow: 'Our Work',
+        title: 'How the chamber advances U.S.–Tanzania business',
+        href: '/our-work',
+    };
+    const ourWorkLinks: NavLink[] = ourWorkItems.length
+        ? ourWorkItems.map((item) => {
+              const href = route('our-work.show', item.slug);
               return {
-                  title: article.title,
-                  desc: [article.category, meta].filter(Boolean).join(' · '),
+                  title: item.title,
+                  desc: item.summary ?? '',
                   href,
                   preview: {
-                      image: article.cover_image_path ?? t('news_fallback_image', t('news_hero_image', '/images/amcham-live/tic-news.jpg')),
-                      eyebrow: article.category ?? 'Latest Insight',
-                      title: article.title,
-                      meta,
+                      image: item.cover_image_path ?? t('our_work_hero_image', '/images/amcham-live/boards.jpg'),
+                      eyebrow: 'Our Work',
+                      title: item.title,
                       href,
                   },
               };
           })
         : [
               {
-                  title: 'News & Insights',
-                  desc: 'Policy updates, member news and investment analysis',
-                  href: '/news',
-                  preview: articlesFallbackPreview,
+                  title: 'Our Work',
+                  desc: 'How the chamber advances U.S.–Tanzania business',
+                  href: '/our-work',
+                  preview: ourWorkFallbackPreview,
               },
           ];
 
-    const eventsShown = Math.min(events.length, NAV_MAX_ITEMS);
-    const articlesShown = Math.min(articles.length, NAV_MAX_ITEMS);
     const galleryLink: NavLink = {
         title: 'Gallery',
         desc: 'Photos and event highlights from across the chamber community',
@@ -187,29 +183,6 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
             href: '/gallery',
         },
     };
-    const newsletterLink: NavLink = {
-        title: 'Newsletters',
-        desc: 'Chamber updates, member stories and business insight to download',
-        href: '/newsletters',
-        preview: {
-            image: t('newsletters_hero_image', '/images/amcham-live/tic-news.jpg'),
-            eyebrow: 'Newsletters',
-            title: 'The latest updates from AMCHAM Tanzania',
-            href: '/newsletters',
-        },
-    };
-    const resourceLink: NavLink = {
-        title: 'Resource Library',
-        desc: 'Investor guides, policy briefs and practical business materials',
-        href: '/resources',
-        preview: {
-            image: t('resources_hero_image', '/images/amcham-live/boards.jpg'),
-            eyebrow: 'Resources',
-            title: 'Practical insight for investors, members and partners',
-            href: '/resources',
-        },
-    };
-
     return [
         {
             key: 'about',
@@ -247,6 +220,14 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
                     },
                 },
             ],
+        },
+        {
+            key: 'work',
+            label: t('nav_our_work', 'Our Work'),
+            align: 'left',
+            matches: ['/our-work'],
+            feature: ourWorkLinks[0]?.preview ?? ourWorkFallbackPreview,
+            links: ourWorkLinks,
         },
         {
             key: 'data',
@@ -312,23 +293,18 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
             key: 'press',
             label: t('nav_news', 'Newsroom'),
             align: 'right',
-            matches: ['/news', '/resources'],
-            feature: articleLinks[0]?.preview ?? articlesFallbackPreview,
-            links: [...articleLinks, resourceLink],
-            footer: [
-                {
-                    label: articlesTotal > articlesShown ? `View all ${articlesTotal} publications` : 'View all publications',
-                    href: '/news',
-                },
-            ],
+            matches: ['/news', '/resources', '/newsletters', '/policy-updates'],
+            // Rendered by the bespoke NewsroomDesktopPanel/NewsroomMobileAccordion instead of the
+            // generic links + single-preview layout every other group uses — see DesktopNav/MobileNavGroups.
+            links: [],
         },
         {
             key: 'media',
             label: t('nav_gallery', 'Gallery'),
             align: 'right',
-            matches: ['/gallery', '/newsletters'],
+            matches: ['/gallery'],
             feature: galleryLink.preview,
-            links: [galleryLink, newsletterLink],
+            links: [galleryLink],
         },
     ];
 }
@@ -461,18 +437,26 @@ export function DesktopNav({ className = '' }: { className?: string }) {
                                 onMouseEnter={cancelClose}
                                 onMouseLeave={scheduleClose}
                             >
+                                {group.key === 'press' ? (
+                                    <NewsroomDesktopPanel nav={props.nav} cms={props.cms} onNavigate={closeNow} />
+                                ) : (
                                 <div className="w-[44rem] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-line bg-white shadow-card-lg animate-fade-up [animation-duration:350ms]">
                                     <span className="block h-1 brand-rule" />
                                     <div className="grid grid-cols-[0.92fr_1.08fr] gap-6 p-5">
                                         <div className="flex flex-col gap-0.5">
-                                            {group.links.map((link) => (
+                                            {group.links.map((link, index) => (
+                                                <div key={link.title + link.href}>
+                                                {link.section && link.section !== group.links[index - 1]?.section && (
+                                                    <p className={'px-3 pb-1 text-[11px] font-bold uppercase tracking-caps text-ink-faint ' + (index > 0 ? 'pt-3' : '')}>
+                                                        {link.section}
+                                                    </p>
+                                                )}
                                                 <Link
-                                                    key={link.title + link.href}
                                                     href={link.href}
                                                     onClick={closeNow}
                                                     onMouseEnter={() => setHovered(link.preview)}
                                                     onFocus={() => setHovered(link.preview)}
-                                                    className="group/link rounded-xl p-3 transition duration-200 hover:bg-mist"
+                                                    className="group/link block rounded-xl p-3 transition duration-200 hover:bg-mist"
                                                 >
                                                     <div className="flex items-start justify-between gap-3">
                                                         <span className="line-clamp-2 text-[15px] font-bold leading-snug text-navy-800">{link.title}</span>
@@ -483,9 +467,10 @@ export function DesktopNav({ className = '' }: { className?: string }) {
                                                     </div>
                                                     <p className="mt-0.5 line-clamp-1 text-[13px] leading-5 text-ink-faint">{link.desc}</p>
                                                 </Link>
+                                                </div>
                                             ))}
                                         </div>
-                                        <PreviewPane preview={hovered ?? group.feature} onNavigate={closeNow} />
+                                        {group.feature && <PreviewPane preview={hovered ?? group.feature} onNavigate={closeNow} />}
                                     </div>
                                     {group.footer && (
                                         <div className="flex items-center justify-between gap-4 border-t border-line bg-mist/60 px-5 py-3">
@@ -504,6 +489,7 @@ export function DesktopNav({ className = '' }: { className?: string }) {
                                         </div>
                                     )}
                                 </div>
+                                )}
                             </div>
                         )}
                     </div>
@@ -545,11 +531,19 @@ export function MobileNavGroups({ onNavigate }: { onNavigate: () => void }) {
                                 className={'h-4 w-4 transition-transform duration-200 ' + (isOpen ? 'rotate-180 text-crimson' : 'text-ink-faint')}
                             />
                         </button>
-                        {isOpen && (
+                        {isOpen && group.key === 'press' && (
+                            <NewsroomMobileAccordion nav={props.nav} cms={props.cms} onNavigate={onNavigate} />
+                        )}
+                        {isOpen && group.key !== 'press' && (
                             <div className="grid gap-1 px-2 pb-2">
-                                {group.links.map((link) => (
+                                {group.links.map((link, index) => (
+                                    <div key={link.title + link.href}>
+                                    {link.section && link.section !== group.links[index - 1]?.section && (
+                                        <p className={'px-3 pb-1 text-[11px] font-bold uppercase tracking-caps text-ink-faint ' + (index > 0 ? 'pt-2' : '')}>
+                                            {link.section}
+                                        </p>
+                                    )}
                                     <Link
-                                        key={link.title + link.href}
                                         href={link.href}
                                         onClick={onNavigate}
                                         className="flex min-w-0 items-center gap-3.5 overflow-hidden rounded-lg bg-white px-3 py-3 transition hover:bg-navy-50"
@@ -560,6 +554,7 @@ export function MobileNavGroups({ onNavigate }: { onNavigate: () => void }) {
                                             <span className="mt-0.5 block truncate text-xs text-ink-faint">{link.desc}</span>
                                         </span>
                                     </Link>
+                                    </div>
                                 ))}
                                 {group.footer?.map((item) => (
                                     <Link
