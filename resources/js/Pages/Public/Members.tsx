@@ -72,15 +72,14 @@ export default function Members({ canLogin, canRegister, members, sectors, summa
                 <div className={shell}>
                     <div className="grid overflow-hidden rounded-2xl border border-white/20 bg-white shadow-card-lg sm:grid-cols-3">
                         {[
-                            { value: `${summary.members}`, label: 'Member companies', note: 'One trusted network' },
-                            { value: `${summary.sectors}`, label: 'Sectors represented', note: 'Across the economy' },
-                            { value: `${summary.tiers}`, label: 'Membership levels', note: 'Built for every ambition' },
+                            { value: '80+', label: 'Member companies', sub: 'One trusted network' },
+                            { value: '12+', label: 'Sectors represented', sub: 'Across the economy' },
                         ].map((stat, index) => (
                             <div key={stat.label} className="relative px-6 py-6 sm:px-8 sm:py-7 [&:not(:last-child)]:border-b [&:not(:last-child)]:border-line sm:[&:not(:last-child)]:border-r sm:[&:not(:last-child)]:border-b-0">
                                 <span className="absolute left-0 top-0 h-1 w-full brand-rule" aria-hidden="true" />
                                 <p className="font-display text-3xl font-semibold tabular-nums text-navy-900 sm:text-4xl"><CountUp value={stat.value} delay={index * 120} /></p>
                                 <p className="mt-1 text-sm font-bold text-navy-800">{stat.label}</p>
-                                <p className="mt-1 text-xs text-ink-faint">{stat.note}</p>
+                                <p className="mt-0.5 text-xs text-ink-faint">{stat.sub}</p>
                             </div>
                         ))}
                     </div>

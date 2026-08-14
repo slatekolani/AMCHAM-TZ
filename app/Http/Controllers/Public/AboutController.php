@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Models\BoardMember;
 use App\Models\Page;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,6 +17,7 @@ class AboutController extends Controller
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
             'page' => Page::where('slug', 'about')->firstOrFail(),
+            'boardMembers' => BoardMember::where('is_active', true)->orderBy('sort_order')->get(),
         ]);
     }
 }

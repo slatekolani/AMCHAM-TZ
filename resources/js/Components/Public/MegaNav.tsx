@@ -172,17 +172,36 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
               },
           ];
 
-    const galleryLink: NavLink = {
-        title: 'Gallery',
-        desc: 'Photos and event highlights from across the chamber community',
-        href: '/gallery',
-        preview: {
-            image: t('gallery_hero_image', '/images/amcham-live/thanksgiving.png'),
-            eyebrow: 'Gallery',
-            title: 'AMCHAM moments, gatherings and event highlights',
-            href: '/gallery',
-        },
+    const workingGroupsItems = nav?.workingGroups ?? [];
+    const workingGroupsFallbackPreview: NavPreview = {
+        image: t('working_groups_hero_image', '/images/amcham-live/boards.jpg'),
+        eyebrow: 'Working Groups',
+        title: 'Sector-based member committees driving chamber priorities',
+        href: '/working-groups',
     };
+    const workingGroupsLinks: NavLink[] = workingGroupsItems.length
+        ? workingGroupsItems.map((item) => {
+              const href = route('working-groups.show', item.slug);
+              return {
+                  title: item.title,
+                  desc: item.summary ?? '',
+                  href,
+                  preview: {
+                      image: item.cover_image_path ?? t('working_groups_hero_image', '/images/amcham-live/boards.jpg'),
+                      eyebrow: 'Working Groups',
+                      title: item.title,
+                      href,
+                  },
+              };
+          })
+        : [
+              {
+                  title: 'Working Groups',
+                  desc: 'Sector-based member committees driving chamber priorities',
+                  href: '/working-groups',
+                  preview: workingGroupsFallbackPreview,
+              },
+          ];
     return [
         {
             key: 'about',
@@ -299,12 +318,12 @@ export function buildNavGroups(nav: PageProps['nav'], cms: Record<string, string
             links: [],
         },
         {
-            key: 'media',
-            label: t('nav_gallery', 'Gallery'),
+            key: 'workingGroups',
+            label: t('nav_working_groups', 'Working Groups'),
             align: 'right',
-            matches: ['/gallery'],
-            feature: galleryLink.preview,
-            links: [galleryLink],
+            matches: ['/working-groups'],
+            feature: workingGroupsLinks[0]?.preview ?? workingGroupsFallbackPreview,
+            links: workingGroupsLinks,
         },
     ];
 }

@@ -329,13 +329,18 @@ export interface FactBlockData {
     value: string;
 }
 
+export interface TimelineBlockData {
+    items: { year: string; title: string; body: string }[];
+}
+
 export type PageBlock =
     | { id: string; type: 'hero'; data: HeroBlockData }
     | { id: string; type: 'stats'; data: StatsBlockData }
     | { id: string; type: 'heading_text'; data: HeadingTextBlockData }
     | { id: string; type: 'values_grid'; data: ValuesGridBlockData }
     | { id: string; type: 'tag_list'; data: TagListBlockData }
-    | { id: string; type: 'fact'; data: FactBlockData };
+    | { id: string; type: 'fact'; data: FactBlockData }
+    | { id: string; type: 'timeline'; data: TimelineBlockData };
 
 export type PageBlockType = PageBlock['type'];
 
@@ -346,6 +351,7 @@ export interface PageBlockDataMap {
     values_grid: ValuesGridBlockData;
     tag_list: TagListBlockData;
     fact: FactBlockData;
+    timeline: TimelineBlockData;
 }
 
 export interface Page {

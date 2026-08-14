@@ -8,6 +8,7 @@ const blockLabels: Record<PageBlock['type'], string> = {
     values_grid: 'Values grid',
     tag_list: 'Tag list',
     fact: 'Single fact',
+    timeline: 'Timeline (dated milestones)',
 };
 
 export const blockTypeOptions = Object.entries(blockLabels) as [PageBlock['type'], string][];
@@ -26,6 +27,8 @@ export function defaultBlockData(type: PageBlock['type']): PageBlock['data'] {
             return { heading: '', items: [] };
         case 'fact':
             return { label: '', value: '' };
+        case 'timeline':
+            return { items: [] };
     }
 }
 
@@ -154,6 +157,33 @@ function ValuesGridEditor({ data, onChange }: EditorProps<Extract<PageBlock, { t
     );
 }
 
+function TimelineEditor({ data, onChange }: EditorProps<Extract<PageBlock, { type: 'timeline' }>['data']>) {
+    const items = data.items ?? [];
+    const update = (index: number, field: 'year' | 'title' | 'body', value: string) => {
+        onChange({ items: items.map((item, i) => (i === index ? { ...item, [field]: value } : item)) });
+    };
+    const remove = (index: number) => onChange({ items: items.filter((_, i) => i !== index) });
+    const add = () => onChange({ items: [...items, { year: '', title: '', body: '' }] });
+
+    return (
+        <div className="grid gap-3">
+            {items.map((item, index) => (
+                <div key={index} className="grid gap-2 border border-[#eadfc8] bg-[#fbf8f0] p-3">
+                    <div className="flex items-center gap-3">
+                        <input value={item.year ?? ''} onChange={(e) => update(index, 'year', e.target.value)} placeholder="2010" className={fieldClass + ' w-28'} />
+                        <input value={item.title ?? ''} onChange={(e) => update(index, 'title', e.target.value)} placeholder="Milestone title" className={fieldClass + ' flex-1'} />
+                        <button type="button" onClick={() => remove(index)} className="text-sm font-bold text-[#cf2f3b]">Remove</button>
+                    </div>
+                    <textarea value={item.body ?? ''} onChange={(e) => update(index, 'body', e.target.value)} placeholder="What happened" className={fieldClass + ' min-h-16'} />
+                </div>
+            ))}
+            <button type="button" onClick={add} className="w-fit border border-[#14234a] px-3 py-1.5 text-xs font-black uppercase tracking-[0.08em] text-[#14234a]">
+                + Add milestone
+            </button>
+        </div>
+    );
+}
+
 function TagListEditor({ data, onChange }: EditorProps<Extract<PageBlock, { type: 'tag_list' }>['data']>) {
     const items = data.items ?? [];
     const update = (index: number, value: string) => {
@@ -214,6 +244,8 @@ export function BlockEditorCard({ block, onChange }: { block: PageBlock; onChang
             return <TagListEditor data={block.data ?? defaultBlockData('tag_list')} onChange={(data) => onChange({ ...block, data })} />;
         case 'fact':
             return <FactEditor data={block.data ?? defaultBlockData('fact')} onChange={(data) => onChange({ ...block, data })} />;
+        case 'timeline':
+            return <TimelineEditor data={block.data ?? defaultBlockData('timeline')} onChange={(data) => onChange({ ...block, data })} />;
     }
 }
 

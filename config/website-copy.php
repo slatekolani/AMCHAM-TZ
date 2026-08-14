@@ -4,6 +4,7 @@ return ['groups' => [
     'images' => ['label' => 'Website images', 'fields' => [
         'site_logo_image' => '/images/brand/amcham-logo.png',
         'about_hero_image' => '/images/amcham-live/boards.jpg',
+        'about_story_image' => '/images/amcham-live/hero-minara.jpg',
         'our_work_hero_image' => '/images/amcham-live/boards.jpg',
         'board_hero_image' => '/images/amcham-live/boards.jpg',
         'membership_hero_image' => '/images/amcham-live/hero-minara.jpg',

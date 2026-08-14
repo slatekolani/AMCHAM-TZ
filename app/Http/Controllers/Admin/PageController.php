@@ -32,7 +32,7 @@ class PageController extends Controller
             'content' => ['nullable', 'array'],
             'content.blocks' => ['nullable', 'array'],
             'content.blocks.*.id' => ['required', 'string'],
-            'content.blocks.*.type' => ['required', 'string', 'in:hero,stats,heading_text,values_grid,tag_list,fact'],
+            'content.blocks.*.type' => ['required', 'string', 'in:hero,stats,heading_text,values_grid,tag_list,fact,timeline'],
             'content.blocks.*.data' => ['required', 'array'],
             'content.blocks.*.data.items.*.image_upload' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
             'content.copy' => ['nullable', 'array'],
