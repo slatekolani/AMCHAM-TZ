@@ -1,6 +1,16 @@
 import { Link } from '@inertiajs/react';
 import { eyebrowDot, eyebrowLight, shell } from '@/Components/Public/ui';
 
+function stripHtml(html: string) {
+    return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function truncateWords(text: string, limit: number) {
+    const words = text.trim().split(/\s+/);
+    if (words.length <= limit) return text;
+    return `${words.slice(0, limit).join(' ')}…`;
+}
+
 type PageHeroProps = {
     eyebrow: string;
     title: string;
@@ -56,7 +66,15 @@ export default function PageHero({
                     {title}
                 </h1>
                 {description && (
-                    <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 animate-fade-up-delay-2">{description}</p>
+                    <>
+                        <p className="mt-4 max-w-2xl text-sm leading-6 text-white/70 animate-fade-up-delay-2 sm:hidden">
+                            {truncateWords(stripHtml(description), 150)}
+                        </p>
+                        <div
+                            className="mt-6 hidden max-w-2xl text-lg leading-8 text-white/70 animate-fade-up-delay-2 sm:block [&_strong]:font-semibold [&_strong]:text-white"
+                            dangerouslySetInnerHTML={{ __html: description }}
+                        />
+                    </>
                 )}
                 <div className="mt-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-caps text-white/40 animate-fade-up-delay-2">
                     <span className="h-px w-10 bg-gold" />
